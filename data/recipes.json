@@ -1,0 +1,158 @@
+{
+  "recipes": [
+    {
+      "id": 1,
+      "name": "Spaghetti Carbonara",
+      "description": "Classic Italian pasta dish with eggs, cheese, and bacon",
+      "ingredients": [
+        "400g spaghetti",
+        "200g pancetta or bacon",
+        "4 large eggs",
+        "100g Pecorino Romano cheese, grated",
+        "2 cloves garlic",
+        "Black pepper",
+        "Salt"
+      ],
+      "instructions": [
+        "Bring a large pot of salted water to boil and cook spaghetti according to package directions.",
+        "While pasta cooks, cut pancetta into small cubes and cook in a large skillet until crispy.",
+        "In a bowl, whisk together eggs, grated cheese, and plenty of black pepper.",
+        "Drain pasta, reserving 1 cup of pasta water.",
+        "Add hot pasta to the skillet with pancetta and toss.",
+        "Remove from heat and quickly stir in egg mixture, adding pasta water as needed to create a creamy sauce.",
+        "Serve immediately with extra cheese and black pepper."
+      ],
+      "cookingTime": 20,
+      "servings": 4,
+      "difficulty": "medium",
+      "category": "dinner",
+      "tags": ["italian", "pasta", "quick", "comfort-food"]
+    },
+    {
+      "id": 2,
+      "name": "Chicken Caesar Salad",
+      "description": "Fresh romaine lettuce with grilled chicken, parmesan, and homemade croutons",
+      "ingredients": [
+        "2 chicken breasts",
+        "1 large head romaine lettuce",
+        "1/2 cup Parmesan cheese, grated",
+        "2 slices bread for croutons",
+        "3 tbsp olive oil",
+        "2 tbsp lemon juice",
+        "1 tbsp Dijon mustard",
+        "2 cloves garlic",
+        "Salt and pepper"
+      ],
+      "instructions": [
+        "Season chicken breasts with salt and pepper, then grill until cooked through (165°F internal temperature).",
+        "Cut bread into cubes and toss with olive oil, then bake at 400°F for 10 minutes until golden.",
+        "Wash and chop romaine lettuce into bite-sized pieces.",
+        "Make dressing by whisking together lemon juice, Dijon mustard, minced garlic, and olive oil.",
+        "Slice grilled chicken into strips.",
+        "Toss lettuce with dressing, top with chicken, croutons, and Parmesan cheese.",
+        "Serve immediately."
+      ],
+      "cookingTime": 25,
+      "servings": 2,
+      "difficulty": "easy",
+      "category": "lunch",
+      "tags": ["healthy", "salad", "protein", "low-carb"]
+    },
+    {
+      "id": 3,
+      "name": "Chocolate Chip Cookies",
+      "description": "Soft and chewy homemade chocolate chip cookies",
+      "ingredients": [
+        "2 1/4 cups all-purpose flour",
+        "1 tsp baking soda",
+        "1 tsp salt",
+        "1 cup butter, softened",
+        "3/4 cup granulated sugar",
+        "3/4 cup brown sugar",
+        "2 large eggs",
+        "2 tsp vanilla extract",
+        "2 cups chocolate chips"
+      ],
+      "instructions": [
+        "Preheat oven to 375°F (190°C).",
+        "In a bowl, whisk together flour, baking soda, and salt.",
+        "In a large bowl, cream together butter and both sugars until light and fluffy.",
+        "Beat in eggs one at a time, then add vanilla extract.",
+        "Gradually mix in the flour mixture until just combined.",
+        "Stir in chocolate chips.",
+        "Drop rounded tablespoons of dough onto ungreased baking sheets.",
+        "Bake for 9-11 minutes until golden brown around edges.",
+        "Cool on baking sheet for 5 minutes before transferring to wire rack."
+      ],
+      "cookingTime": 30,
+      "servings": 24,
+      "difficulty": "easy",
+      "category": "dessert",
+      "tags": ["baking", "sweet", "cookies", "family-friendly"]
+    },
+    {
+      "id": 4,
+      "name": "Vegetable Stir Fry",
+      "description": "Quick and healthy mixed vegetable stir fry with soy sauce",
+      "ingredients": [
+        "2 tbsp vegetable oil",
+        "1 bell pepper, sliced",
+        "1 cup broccoli florets",
+        "1 carrot, julienned",
+        "1 cup snap peas",
+        "2 cloves garlic, minced",
+        "1 tbsp fresh ginger, minced",
+        "3 tbsp soy sauce",
+        "1 tbsp sesame oil",
+        "1 tsp cornstarch",
+        "Green onions for garnish"
+      ],
+      "instructions": [
+        "Heat vegetable oil in a large wok or skillet over high heat.",
+        "Add garlic and ginger, stir-fry for 30 seconds until fragrant.",
+        "Add harder vegetables (carrots, broccoli) first and stir-fry for 2-3 minutes.",
+        "Add bell peppers and snap peas, continue stir-frying for 2 minutes.",
+        "Mix soy sauce, sesame oil, and cornstarch in a small bowl.",
+        "Pour sauce over vegetables and toss to coat.",
+        "Cook for another minute until sauce thickens slightly.",
+        "Garnish with chopped green onions and serve over rice."
+      ],
+      "cookingTime": 15,
+      "servings": 4,
+      "difficulty": "easy",
+      "category": "dinner",
+      "tags": ["vegetarian", "healthy", "quick", "asian", "vegan"]
+    },
+    {
+      "id": 5,
+      "name": "Pancakes",
+      "description": "Fluffy buttermilk pancakes perfect for weekend breakfast",
+      "ingredients": [
+        "2 cups all-purpose flour",
+        "2 tbsp sugar",
+        "2 tsp baking powder",
+        "1 tsp salt",
+        "2 cups buttermilk",
+        "2 large eggs",
+        "1/4 cup melted butter",
+        "1 tsp vanilla extract",
+        "Butter for cooking"
+      ],
+      "instructions": [
+        "In a large bowl, whisk together flour, sugar, baking powder, and salt.",
+        "In another bowl, whisk together buttermilk, eggs, melted butter, and vanilla.",
+        "Pour wet ingredients into dry ingredients and stir until just combined (don't overmix).",
+        "Heat a griddle or large skillet over medium heat and add a little butter.",
+        "Pour 1/4 cup of batter for each pancake onto the hot griddle.",
+        "Cook until bubbles form on surface and edges look set, about 2-3 minutes.",
+        "Flip and cook until golden brown on the other side, 1-2 minutes more.",
+        "Serve hot with maple syrup and butter."
+      ],
+      "cookingTime": 20,
+      "servings": 4,
+      "difficulty": "easy",
+      "category": "breakfast",
+      "tags": ["breakfast", "fluffy", "weekend", "family-friendly"]
+    }
+  ]
+}
