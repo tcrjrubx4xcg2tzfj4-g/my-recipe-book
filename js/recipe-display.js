@@ -39,7 +39,7 @@ class RecipeDisplay {
             <div class="recipe-card" data-recipe-id="${recipe.id}">
                 <img src="${recipe.image || 'https://via.placeholder.com/300x200?text=Recipe'}" 
                      alt="${recipe.name}" 
-                     onerror="this.src='https://via.placeholder.com/300x200?text=Recipe'">
+                     onerror="if(!this.dataset.errorHandled){this.dataset.errorHandled='true';this.style.display='none';}">
                 <div class="recipe-card-content">
                     <h3>${recipe.name}</h3>
                     <p>${recipe.description}</p>
@@ -95,7 +95,7 @@ class RecipeDisplay {
                 <img src="${recipe.image}" 
                      alt="${recipe.name}" 
                      style="width: 100%; max-width: 500px; height: 300px; object-fit: cover; border-radius: 10px; margin-bottom: 2rem;"
-                     onerror="this.style.display='none'">
+                     onerror="if(!this.dataset.errorHandled){this.dataset.errorHandled='true';this.style.display='none';}">
             ` : ''}
             
             <p style="font-size: 1.1rem; color: #666; margin-bottom: 2rem;">${recipe.description}</p>
