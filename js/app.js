@@ -4,6 +4,7 @@ class RecipeManager {
         this.recipes = [];
         this.filteredRecipes = [];
         this.currentView = 'grid'; // 'grid' or 'detail'
+        this.isShuffled = false;
         
         this.init();
     }
@@ -40,6 +41,7 @@ class RecipeManager {
         // Search functionality
         const searchInput = document.getElementById('searchInput');
         const clearButton = document.getElementById('clearSearch');
+        const shuffleButton = document.getElementById('shuffleButton');
         const backButton = document.getElementById('backButton');
         
         searchInput.addEventListener('input', (e) => {
@@ -49,6 +51,10 @@ class RecipeManager {
         clearButton.addEventListener('click', () => {
             searchInput.value = '';
             this.handleSearch('');
+        });
+        
+        shuffleButton.addEventListener('click', () => {
+            this.shuffleRecipes();
         });
         
         backButton.addEventListener('click', () => {
@@ -61,6 +67,18 @@ class RecipeManager {
             this.filteredRecipes = window.recipeSearch.search(this.recipes, query);
             this.displayRecipes(this.filteredRecipes);
         }
+    }
+    
+    shuffleRecipes() {
+        // Fisher-Yates shuffle algorithm
+        const shuffled = [...this.filteredRecipes];
+        for (let i = shuffled.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+        }
+        this.filteredRecipes = shuffled;
+        this.isShuffled = true;
+        this.displayRecipes(this.filteredRecipes);
     }
     
     displayRecipes(recipes) {
