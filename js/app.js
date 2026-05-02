@@ -211,5 +211,9 @@ class RecipeManager {
 
 // Initialize the app when DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
+    // Ensure RecipeDisplay is initialized first
+    if (!window.recipeDisplay) {
+        window.recipeDisplay = new RecipeDisplay();
+    }
     window.recipeManager = new RecipeManager();
 });

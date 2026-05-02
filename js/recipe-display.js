@@ -210,5 +210,7 @@ class RecipeDisplay {
     }
 }
 
-// Initialize display functionality
-window.recipeDisplay = new RecipeDisplay();
+// Initialize display functionality when DOM is loaded
+document.addEventListener('DOMContentLoaded', () => {
+    window.recipeDisplay = new RecipeDisplay();
+});

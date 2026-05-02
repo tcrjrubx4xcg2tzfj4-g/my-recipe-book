@@ -288,6 +288,21 @@ main {
     display: none;
 }
 
+#backFromShoppingButton {
+    background: #667eea;
+    color: white;
+    border: none;
+    padding: 0.75rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 1.5rem;
+    font-size: 1rem;
+}
+
+#backFromShoppingButton:hover {
+    background: #5a6fd8;
+}
+
 .ingredient-group {
     margin-bottom: 1.5rem;
 }
