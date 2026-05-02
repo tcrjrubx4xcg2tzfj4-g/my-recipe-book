@@ -40,7 +40,7 @@ header h1 {
     font-size: 1rem;
 }
 
-#clearSearch {
+#clearSearch, #shuffleButton {
     padding: 0.75rem 1rem;
     background: rgba(255, 255, 255, 0.2);
     color: white;
@@ -50,7 +50,7 @@ header h1 {
     transition: background 0.3s;
 }
 
-#clearSearch:hover {
+#clearSearch:hover, #shuffleButton:hover {
     background: rgba(255, 255, 255, 0.3);
 }
 
