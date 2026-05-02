@@ -54,6 +54,33 @@ header h1 {
     background: rgba(255, 255, 255, 0.3);
 }
 
+.selection-controls {
+    max-width: 500px;
+    margin: 1rem auto 0;
+    display: flex;
+    gap: 0.5rem;
+    justify-content: center;
+}
+
+.selection-controls button {
+    padding: 0.5rem 1rem;
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+    font-size: 0.9rem;
+}
+
+.selection-controls button:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+.selection-controls button.active {
+    background: rgba(255, 255, 255, 0.4);
+}
+
 /* Main content */
 main {
     max-width: 1200px;
@@ -125,6 +152,41 @@ main {
     padding: 0.25rem 0.5rem;
     border-radius: 15px;
     font-size: 0.8rem;
+}
+
+.recipe-card.selected {
+    border: 3px solid #667eea;
+    transform: translateY(-2px);
+}
+
+.recipe-card .selection-checkbox {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 20px;
+    height: 20px;
+    background: white;
+    border: 2px solid #667eea;
+    border-radius: 3px;
+    cursor: pointer;
+    display: none;
+}
+
+.recipe-card.selection-mode .selection-checkbox {
+    display: block;
+}
+
+.recipe-card.selected .selection-checkbox {
+    background: #667eea;
+}
+
+.recipe-card.selected .selection-checkbox::after {
+    content: "✓";
+    color: white;
+    font-size: 12px;
+    position: absolute;
+    top: -2px;
+    left: 2px;
 }
 
 /* Recipe detail view */
@@ -213,6 +275,45 @@ main {
 .instructions li {
     margin-bottom: 1rem;
     line-height: 1.8;
+}
+
+.shopping-list {
+    background: white;
+    border-radius: 10px;
+    padding: 2rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.shopping-list.hidden {
+    display: none;
+}
+
+.ingredient-group {
+    margin-bottom: 1.5rem;
+}
+
+.ingredient-group h4 {
+    color: #667eea;
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+}
+
+.ingredient-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #eee;
+}
+
+.ingredient-name {
+    flex: 1;
+}
+
+.ingredient-recipes {
+    font-size: 0.8rem;
+    color: #666;
+    margin-left: 1rem;
 }
 
 /* Responsive design */

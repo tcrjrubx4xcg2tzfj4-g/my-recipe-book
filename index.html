@@ -14,6 +14,11 @@
             <button id="clearSearch">Clear</button>
             <button id="shuffleButton">Shuffle</button>
         </div>
+        <div class="selection-controls">
+            <button id="selectModeButton">Select Recipes</button>
+            <button id="viewShoppingListButton" class="hidden">View Shopping List (0)</button>
+            <button id="clearSelectionsButton" class="hidden">Clear Selections</button>
+        </div>
     </header>
 
     <main>
@@ -25,6 +30,13 @@
             <button id="backButton">← Back to Recipes</button>
             <div id="recipeContent">
                 <!-- Recipe details will be loaded here -->
+            </div>
+        </div>
+        
+        <div id="shoppingList" class="shopping-list hidden">
+            <button id="backFromShoppingButton">← Back to Recipes</button>
+            <div id="shoppingListContent">
+                <!-- Shopping list will be loaded here -->
             </div>
         </div>
     </main>

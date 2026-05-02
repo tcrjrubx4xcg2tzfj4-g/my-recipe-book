@@ -5,6 +5,8 @@ class RecipeManager {
         this.filteredRecipes = [];
         this.currentView = 'grid'; // 'grid' or 'detail'
         this.isShuffled = false;
+        this.selectedRecipes = new Set();
+        this.selectionMode = false;
         
         this.init();
     }
@@ -60,6 +62,27 @@ class RecipeManager {
         backButton.addEventListener('click', () => {
             this.showRecipeGrid();
         });
+        
+        const selectModeButton = document.getElementById('selectModeButton');
+        const viewShoppingListButton = document.getElementById('viewShoppingListButton');
+        const clearSelectionsButton = document.getElementById('clearSelectionsButton');
+        const backFromShoppingButton = document.getElementById('backFromShoppingButton');
+        
+        selectModeButton.addEventListener('click', () => {
+            this.toggleSelectionMode();
+        });
+        
+        viewShoppingListButton.addEventListener('click', () => {
+            this.showShoppingList();
+        });
+        
+        clearSelectionsButton.addEventListener('click', () => {
+            this.clearSelections();
+        });
+        
+        backFromShoppingButton.addEventListener('click', () => {
+            this.showRecipeGrid();
+        });
     }
     
     handleSearch(query) {
@@ -84,9 +107,78 @@ class RecipeManager {
     displayRecipes(recipes) {
         if (window.recipeDisplay) {
             window.recipeDisplay.renderRecipeGrid(recipes, (recipe) => {
-                this.showRecipeDetail(recipe);
-            });
+                if (this.selectionMode) {
+                    this.toggleRecipeSelection(recipe);
+                } else {
+                    this.showRecipeDetail(recipe);
+                }
+            }, this.selectionMode, this.selectedRecipes);
         }
+    }
+    
+    toggleSelectionMode() {
+        this.selectionMode = !this.selectionMode;
+        const selectModeButton = document.getElementById('selectModeButton');
+        const viewShoppingListButton = document.getElementById('viewShoppingListButton');
+        const clearSelectionsButton = document.getElementById('clearSelectionsButton');
+        
+        if (this.selectionMode) {
+            selectModeButton.textContent = 'Exit Selection';
+            selectModeButton.classList.add('active');
+            viewShoppingListButton.classList.remove('hidden');
+            clearSelectionsButton.classList.remove('hidden');
+        } else {
+            selectModeButton.textContent = 'Select Recipes';
+            selectModeButton.classList.remove('active');
+            viewShoppingListButton.classList.add('hidden');
+            clearSelectionsButton.classList.add('hidden');
+            this.clearSelections();
+        }
+        
+        this.displayRecipes(this.filteredRecipes);
+    }
+    
+    toggleRecipeSelection(recipe) {
+        if (this.selectedRecipes.has(recipe.id)) {
+            this.selectedRecipes.delete(recipe.id);
+        } else {
+            this.selectedRecipes.add(recipe.id);
+        }
+        this.updateSelectionUI();
+    }
+    
+    updateSelectionUI() {
+        const viewShoppingListButton = document.getElementById('viewShoppingListButton');
+        viewShoppingListButton.textContent = `View Shopping List (${this.selectedRecipes.size})`;
+        
+        // Update recipe card selection states
+        document.querySelectorAll('.recipe-card').forEach(card => {
+            const recipeId = parseInt(card.dataset.recipeId);
+            if (this.selectedRecipes.has(recipeId)) {
+                card.classList.add('selected');
+            } else {
+                card.classList.remove('selected');
+            }
+        });
+    }
+    
+    clearSelections() {
+        this.selectedRecipes.clear();
+        this.updateSelectionUI();
+    }
+    
+    showShoppingList() {
+        this.currentView = 'shopping';
+        if (window.recipeDisplay) {
+            const selectedRecipeObjects = this.recipes.filter(recipe => 
+                this.selectedRecipes.has(recipe.id)
+            );
+            window.recipeDisplay.renderShoppingList(selectedRecipeObjects);
+        }
+        
+        document.getElementById('recipeGrid').style.display = 'none';
+        document.getElementById('recipeDetail').classList.add('hidden');
+        document.getElementById('shoppingList').classList.remove('hidden');
     }
     
     showRecipeDetail(recipe) {
@@ -103,6 +195,7 @@ class RecipeManager {
         this.currentView = 'grid';
         document.getElementById('recipeGrid').style.display = 'grid';
         document.getElementById('recipeDetail').classList.add('hidden');
+        document.getElementById('shoppingList').classList.add('hidden');
     }
     
     showError(message) {
